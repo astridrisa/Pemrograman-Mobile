@@ -25,7 +25,7 @@ if (test == "test2") print("Test2 again");
 Silakan coba eksekusi (Run) kode pada langkah 1 tersebut. 
 
 **Hasil**
-![alt text](img/image.png)
+![alt text](img/image.png![alt text](image.png))
 
 Apa yang terjadi? Jelaskan!
 
