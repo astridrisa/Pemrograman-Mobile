@@ -1,4 +1,4 @@
-# **Pertemuan 7 - Layout dan Navigasi**
+# **Pertemuan 6 - Layout dan Navigasi**
 
 # **TUGAS PRAKTIKUM 1**
 1. Selesaikan Praktikum 1 sampai 4, lalu dokumentasikan dan push ke repository Anda berupa screenshot setiap hasil pekerjaan beserta penjelasannya di file README.md!
