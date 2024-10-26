@@ -1,16 +1,19 @@
-# uts_linkaja
+# **UTS PEMROGRAMAN MOBILE**
 
-A new Flutter project.
+### Nama  : Astrid Risa Widiana
+### NIM   : 2241720250
+### Kelas : TI-3A
+### Absen : 05
 
-## Getting Started
+UTS Mobile (Membuat Layout Linkaja)
+[https://photos.onedrive.com/share/0B4C5E35BB65DB4A!46285?cid=0B4C5E35BB65DB4A&resId=0B4C5E35BB65DB4A!46285&authkey=!AM-WOWAEkt2VyJw&ithint=video&e=NoiJPH ](https://)
 
-This project is a starting point for a Flutter application.
+1. Splash Screen
+2. Homepage
+3. History
+4. Account
 
-A few resources to get you started if this is your first Flutter project:
+### Hasil
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+![alt text](<UTS MOBILE.gif>)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
