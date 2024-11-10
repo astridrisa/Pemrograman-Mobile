@@ -1,17 +1,15 @@
-import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
-import 'displaypicture_screen.dart';
+import 'package:flutter/material.dart';
+import 'package:kamera_flutter/widget/displaypicture_screen.dart';
 
 class TakePictureScreen extends StatefulWidget {
-  final CameraDescription camera;
-
   const TakePictureScreen({super.key, required this.camera});
-
+  final CameraDescription camera;
   @override
-  TakePictureScreenState createState() => TakePictureScreenState();
+  State<TakePictureScreen> createState() => _TakePictureScreenState();
 }
 
-class TakePictureScreenState extends State<TakePictureScreen> {
+class _TakePictureScreenState extends State<TakePictureScreen> {
   late CameraController _controller;
   late Future<void> _initializeControllerFuture;
 
@@ -34,8 +32,29 @@ class TakePictureScreenState extends State<TakePictureScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Take a Picture')),
-      body: FutureBuilder<void>(
+      appBar: AppBar(title: const Text('Take a picture - 2241720250')),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {
+          try {
+            await _initializeControllerFuture;
+            final image = await _controller.takePicture();
+
+            if (!context.mounted) return;
+
+            await Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => DisplayPictureScreen(
+                  imagePath: image.path,
+                ),
+              ),
+            );
+          } catch (e) {
+            print(e);
+          }
+        },
+        child: const Icon(Icons.camera_alt),
+      ),
+      body: FutureBuilder(
         future: _initializeControllerFuture,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
@@ -44,24 +63,6 @@ class TakePictureScreenState extends State<TakePictureScreen> {
             return const Center(child: CircularProgressIndicator());
           }
         },
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () async {
-          try {
-            await _initializeControllerFuture;
-            final image = await _controller.takePicture();
-
-            if (!context.mounted) return;
-            await Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) => DisplayPictureScreen(imagePath: image.path),
-              ),
-            );
-          } catch (e) {
-            print(e);
-          }
-        },
-        child: const Icon(Icons.camera_alt),
       ),
     );
   }
