@@ -1,18 +1,17 @@
-import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
-import 'widget/takepicture_screen.dart';
+import 'package:flutter/material.dart';
+import 'package:kamera_flutter/widget/takepicture_screen.dart';
 
 Future<void> main() async {
-  // Initialize the camera plugin
   WidgetsFlutterBinding.ensureInitialized();
   final cameras = await availableCameras();
   final firstCamera = cameras.first;
 
-  runApp(
-    MaterialApp(
-      theme: ThemeData.dark(),
-      home: TakePictureScreen(camera: firstCamera),
-      debugShowCheckedModeBanner: false,
+  runApp(MaterialApp(
+    theme: ThemeData.dark(),
+    home: TakePictureScreen(
+      camera: firstCamera,
     ),
-  );
+    debugShowCheckedModeBanner: false,
+  ));
 }
