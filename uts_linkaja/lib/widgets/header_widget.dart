@@ -3,13 +3,15 @@ import 'quick_actions.dart';
 import 'balance_widget.dart';
 
 class HeaderWidget extends StatelessWidget {
+  const HeaderWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Container(
-          padding: EdgeInsets.all(16),
-          decoration: BoxDecoration(
+          padding: const EdgeInsets.all(16),
+          decoration: const BoxDecoration(
             borderRadius: BorderRadius.vertical(bottom: Radius.circular(20)),
             color: Colors.white,
           ),
@@ -19,7 +21,7 @@ class HeaderWidget extends StatelessWidget {
                 child: Image.asset(
                   'assets/bt-banner-2.png',
                   fit: BoxFit.cover,
-                  opacity: AlwaysStoppedAnimation(0.25),
+                  opacity: const AlwaysStoppedAnimation(0.25),
                 ),
               ),
               Row(
@@ -29,25 +31,25 @@ class HeaderWidget extends StatelessWidget {
                   Row(
                     children: [
                       _buildIcon(Icons.favorite_border),
-                      SizedBox(width: 16),
+                      const SizedBox(width: 16),
                       _buildIcon(Icons.chat_bubble_outline),
                     ],
                   ),
                 ],
               ),
-              BalanceWidget(),
+              const BalanceWidget(),
             ],
           ),
         ),
-        SizedBox(height: 10),
-        QuickActions(),
+        const SizedBox(height: 10),
+        const QuickActions(),
       ],
     );
   }
 
   Widget _buildIcon(IconData icon) {
     return Container(
-      padding: EdgeInsets.all(8),
+      padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(8),

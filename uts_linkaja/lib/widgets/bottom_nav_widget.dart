@@ -4,7 +4,7 @@ class BottomNavBarWidget extends StatelessWidget {
   final int currentIndex;
   final Function(int) onTap;
 
-  const BottomNavBarWidget({
+  const BottomNavBarWidget({super.key, 
     required this.currentIndex,
     required this.onTap,
   });

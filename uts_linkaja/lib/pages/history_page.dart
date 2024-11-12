@@ -51,10 +51,10 @@ class _HistoryPageState extends State<HistoryPage> {
       length: 2, // Number of tabs
       child: Scaffold(
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(110.0),
+          preferredSize: const Size.fromHeight(110.0),
           child: AppBar(
-            title: Padding(
-              padding: const EdgeInsets.only(bottom: 1.0),
+            title: const Padding(
+              padding: EdgeInsets.only(bottom: 1.0),
               child: Text(
                 'Transaction History',
                 style: TextStyle(
@@ -64,7 +64,7 @@ class _HistoryPageState extends State<HistoryPage> {
               ),
             ),
             centerTitle: true,
-            bottom: TabBar(
+            bottom: const TabBar(
               indicator: UnderlineTabIndicator(
                 borderSide: BorderSide(
                   color: Colors.red, // Active tab border color
@@ -95,7 +95,7 @@ class _HistoryPageState extends State<HistoryPage> {
         body: TabBarView(
           children: [
             Container(
-              color: Color.fromARGB(255, 243, 243, 243),
+              color: const Color.fromARGB(255, 243, 243, 243),
               child: Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -104,15 +104,15 @@ class _HistoryPageState extends State<HistoryPage> {
                       'assets/transaction.png', // Ensure the asset path is correct
                       height: 150,
                     ),
-                    SizedBox(height: 16),
-                    Text(
+                    const SizedBox(height: 16),
+                    const Text(
                       'All transactions are completed!',
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
-                    Text(
+                    const Text(
                       'Any Pending transactions will appear in this page',
                       style: TextStyle(
                         fontSize: 14,
@@ -125,7 +125,7 @@ class _HistoryPageState extends State<HistoryPage> {
               ),
             ),
             Container(
-              color: Color.fromARGB(255, 243, 243, 243),
+              color: const Color.fromARGB(255, 243, 243, 243),
               child: Padding(
                 padding: const EdgeInsets.all(16),
                 child: ListView.builder(

@@ -2,6 +2,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 class ImagesCarousel extends StatefulWidget {
+  const ImagesCarousel({super.key});
+
   @override
   _ImageCarouselWidgetState createState() => _ImageCarouselWidgetState();
 }
@@ -16,7 +18,7 @@ class _ImageCarouselWidgetState extends State<ImagesCarousel> {
     super.initState();
     
     // Set up a timer for automatic sliding
-    _timer = Timer.periodic(Duration(seconds: 3), (timer) {
+    _timer = Timer.periodic(const Duration(seconds: 3), (timer) {
       // Check if the carousel has reached the last item, if so, reset to 0
       int nextPage = _carouselIndex + 1;
       if (nextPage >= 3) {
@@ -24,7 +26,7 @@ class _ImageCarouselWidgetState extends State<ImagesCarousel> {
       }
       _pageController.animateToPage(
         nextPage,
-        duration: Duration(milliseconds: 400),
+        duration: const Duration(milliseconds: 400),
         curve: Curves.easeInOut,
       );
     });
@@ -49,7 +51,7 @@ class _ImageCarouselWidgetState extends State<ImagesCarousel> {
             itemCount: 3, // Adjust based on the number of images
             itemBuilder: (context, index) {
               return Container(
-                margin: EdgeInsets.symmetric(horizontal: 8),
+                margin: const EdgeInsets.symmetric(horizontal: 8),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   color: index == 0 ? Colors.orange : Colors.white,
@@ -57,7 +59,7 @@ class _ImageCarouselWidgetState extends State<ImagesCarousel> {
                     BoxShadow(
                       color: Colors.grey.withOpacity(0.2),
                       blurRadius: 4,
-                      offset: Offset(0, 2),
+                      offset: const Offset(0, 2),
                     ),
                   ],
                 ),
@@ -72,7 +74,7 @@ class _ImageCarouselWidgetState extends State<ImagesCarousel> {
             },
           ),
         ),
-        SizedBox(height: 8),
+        const SizedBox(height: 8),
         _buildPageIndicator(),
       ],
     );
@@ -83,8 +85,8 @@ class _ImageCarouselWidgetState extends State<ImagesCarousel> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: List.generate(3, (index) {
         return AnimatedContainer(
-          duration: Duration(milliseconds: 300),
-          margin: EdgeInsets.symmetric(horizontal: 4),
+          duration: const Duration(milliseconds: 300),
+          margin: const EdgeInsets.symmetric(horizontal: 4),
           width: _carouselIndex == index ? 12 : 8,
           height: 8,
           decoration: BoxDecoration(

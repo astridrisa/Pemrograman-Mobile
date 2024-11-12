@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:uts_linkaja/widgets/bottom_nav_widget.dart';
 
 class ProfilePage extends StatelessWidget{
+  const ProfilePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Account'),
+        title: const Text('Account'),
         backgroundColor: Colors.white,
         foregroundColor: Colors.black,
       ),
@@ -37,8 +39,8 @@ class ProfilePage extends StatelessWidget{
 
   Widget _buildProfileHeader() {
     return Container(
-      padding: EdgeInsets.all(16),
-      child: Row(
+      padding: const EdgeInsets.all(16),
+      child: const Row(
         mainAxisAlignment:
             MainAxisAlignment.spaceBetween, // Space between items
         children: [
@@ -76,12 +78,12 @@ class ProfilePage extends StatelessWidget{
           if (value.isNotEmpty)
             Text(
               value,
-              style: TextStyle(color: Colors.grey),
+              style: const TextStyle(color: Colors.grey),
             ),
           if (showArrow)
-            Icon(Icons.chevron_right, color: Colors.grey)
+            const Icon(Icons.chevron_right, color: Colors.grey)
           else
-            SizedBox(width: 24),
+            const SizedBox(width: 24),
         ],
       ),
       onTap: () {

@@ -13,6 +13,8 @@ class ServicesGrid extends StatelessWidget {
     Services(icon: Icons.more_horiz, name: 'More'),
   ];
 
+  const ServicesGrid({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -22,8 +24,8 @@ class ServicesGrid extends StatelessWidget {
       ),
       child: GridView.builder(
         shrinkWrap: true,
-        physics: NeverScrollableScrollPhysics(),
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        physics: const NeverScrollableScrollPhysics(),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 4,
         ),
         itemCount: services.length,
@@ -39,11 +41,11 @@ class ServicesGrid extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Icon(service.icon, color: Colors.red),  // Access icon from the model
-        SizedBox(height: 4),
+        const SizedBox(height: 4),
         Text(
           service.name,  // Access label from the model
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 10),
+          style: const TextStyle(fontSize: 10),
         ),
       ],
     );

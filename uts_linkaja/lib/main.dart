@@ -5,10 +5,12 @@ import 'package:uts_linkaja/pages/history_page.dart';
 import 'splash_screen.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -19,10 +21,10 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => SplashScreen(),
-        '/home': (context) => HomePage(),
-        '/history': (context) => HistoryPage(),
-        '/profile': (context) => ProfilePage(),
+        '/': (context) => const SplashScreen(),
+        '/home': (context) => const HomePage(),
+        '/history': (context) => const HistoryPage(),
+        '/profile': (context) => const ProfilePage(),
       },
     );
   }
