@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class BestDeals extends StatefulWidget {
+  const BestDeals({super.key});
+
   @override
   _BestDealsWidgetState createState() => _BestDealsWidgetState();
 }
@@ -28,8 +30,8 @@ class _BestDealsWidgetState extends State<BestDeals> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         // Header with 'Best Deals' and 'See All'
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -59,7 +61,7 @@ class _BestDealsWidgetState extends State<BestDeals> {
             itemCount: descriptions.length,
             itemBuilder: (context, index) {
               return Container(
-                margin: EdgeInsets.symmetric(horizontal: 8),
+                margin: const EdgeInsets.symmetric(horizontal: 8),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -73,7 +75,7 @@ class _BestDealsWidgetState extends State<BestDeals> {
                             BoxShadow(
                               color: Colors.grey.withOpacity(0.2),
                               blurRadius: 4,
-                              offset: Offset(0, 2),
+                              offset: const Offset(0, 2),
                             ),
                           ],
                         ),
@@ -87,20 +89,20 @@ class _BestDealsWidgetState extends State<BestDeals> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 4),
+                    const SizedBox(height: 4),
                     // Main description text
                     Text(
                       descriptions[index],
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
-                    SizedBox(height: 2),
+                    const SizedBox(height: 2),
                     // Additional smaller text in grey
                     Text(
                       additionalTexts[index],
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 12,
                         color: Colors.grey,
                       ),
@@ -111,7 +113,7 @@ class _BestDealsWidgetState extends State<BestDeals> {
             },
           ),
         ),
-        SizedBox(height: 8),
+        const SizedBox(height: 8),
         // Page Indicator
         _buildPageIndicator(),
       ],
@@ -123,8 +125,8 @@ class _BestDealsWidgetState extends State<BestDeals> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: List.generate(descriptions.length, (index) {
         return AnimatedContainer(
-          duration: Duration(milliseconds: 300),
-          margin: EdgeInsets.symmetric(horizontal: 4),
+          duration: const Duration(milliseconds: 300),
+          margin: const EdgeInsets.symmetric(horizontal: 4),
           width: _carouselIndex == index ? 12 : 8,
           height: 8,
           decoration: BoxDecoration(

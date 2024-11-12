@@ -64,7 +64,7 @@ class _PlanScreenState extends State<PlanScreen> {
           List<Plan> updatedPlans = List<Plan>.from(planNotifier.value);
           List<Task> updatedTasks = List<Task>.from(currentPlan.tasks);
 
-          updatedTasks.add(Task(description: '', complete: false));
+          updatedTasks.add(const Task(description: '', complete: false));
 
           updatedPlans[planIndex] = Plan(
             name: currentPlan.name,

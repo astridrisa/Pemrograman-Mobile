@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import './pages/home_page.dart'; // Import halaman utama
 
 class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
+
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
@@ -18,18 +20,18 @@ class _SplashScreenState extends State<SplashScreen> {
     _startAnimation(); // Start animation when splash screen loads
 
     // Navigate to the HomePage after 3 seconds
-    Future.delayed(Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 3), () {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-            builder: (context) => HomePage()), // Redirect to HomePage
+            builder: (context) => const HomePage()), // Redirect to HomePage
       );
     });
   }
 
   // Start animation by setting new size and opacity values
   void _startAnimation() {
-    Future.delayed(Duration(milliseconds: 500), () {
+    Future.delayed(const Duration(milliseconds: 500), () {
       setState(() {
         _logoSize = 200; // Grow the logo size
         _logoOpacity = 1.0; // Fade in the logo
@@ -43,12 +45,12 @@ class _SplashScreenState extends State<SplashScreen> {
       backgroundColor: Colors.white, // Splash screen background color
       body: Center(
         child: AnimatedContainer(
-          duration: Duration(seconds: 2), // Animation duration
+          duration: const Duration(seconds: 2), // Animation duration
           curve: Curves.easeInOut, // Smooth animation curve
           height: _logoSize,
           width: _logoSize,
           child: AnimatedOpacity(
-            duration: Duration(seconds: 2), // Animation duration for opacity
+            duration: const Duration(seconds: 2), // Animation duration for opacity
             opacity: _logoOpacity,
             child: Image.asset('assets/icon.png'), // Replace with your app logo
           ),
